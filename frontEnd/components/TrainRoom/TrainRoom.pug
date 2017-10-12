@@ -1,0 +1,27 @@
+article.train-room(aria-labelledby="train-room-heading")
+  h2#train-room-heading.text-center(role="haeding") Train room
+  section.transform-browser-rendering(aria-labelledby="transform-browser-rendering-heading")
+    h3#transform-browser-rendering-heading.text-center Transform when it renders
+      |  by browser via transition
+    section.hamburger-wrapper 
+      .hamburger-container
+        .dash.top
+        .dash.middle
+        .dash.middle
+        .dash.bottom
+    p.issue-explanation
+      | If we click on hamburger in webkit-based browsers, we`ll see that 
+      | everything is ok. Middle dashes creates a cross, and top anf bottom 
+      | dashes dissapear.
+    p.issue-explanation
+      | But if we click on hamburger in moz-based browsers, we`ll see that 
+      | it`s still smooth (transition works), but it looks ugly with pixels. 
+      | Like some games from 90s акщь previous century.
+    p.issue-explanation
+      | If we click on hamburger in Edge we`ll see that top and bottom dases 
+      | can blinking when dissapearing. In IE11 and IE10 middle dashes got 
+      | some bolder while rotating. And in IE9 transitions doesn`t work at all. 
+      | We need to write some Javascript or plug some ready solution to 
+      | polyfill transitions, if we still working with IE9.
+    p.issue-explanation
+      And css animation doesn`t work in IE9 too.

@@ -1,0 +1,62 @@
+#train-room-heading {
+  font-size: 8em;
+}
+
+#transform-browser-rendering-heading {
+  font-size: 3em;
+}
+
+.hamburger-wrapper {
+  width: 8em;
+  height: 6em;
+  padding: 1.2em;
+  margin: 2em auto;
+  cursor: pointer;
+}
+
+.hamburger-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.dash {
+  position: absolute;
+  width: 6em;
+  height: .7em;
+  background-color: rgb(100, 40, 210);
+  transition: transform .4s ease-out,
+    visibility .3s ease-in,
+    opacity .3s ease-in;
+}
+
+.top {
+  top: 0;
+}
+
+.middle {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.bottom {
+  bottom: 0;
+}
+
+.dash-clockwise {
+  transform: rotateZ(-45deg);
+}
+
+.dash-counter-clockwise {
+  transform: rotateZ(45deg);
+}
+
+.__hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.issue-explanation {
+  font-size: 2em;
+  padding: 0 .2em;
+}
