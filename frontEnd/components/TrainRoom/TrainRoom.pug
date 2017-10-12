@@ -11,17 +11,26 @@ article.train-room(aria-labelledby="train-room-heading")
         .dash.bottom
     p.issue-explanation
       | If we click on hamburger in webkit-based browsers, we`ll see that 
-      | everything is ok. Middle dashes creates a cross, and top anf bottom 
+      | everything is ok. Middle dashes create a cross, and top and bottom 
       | dashes dissapear.
     p.issue-explanation
       | But if we click on hamburger in moz-based browsers, we`ll see that 
       | it`s still smooth (transition works), but it looks ugly with pixels. 
-      | Like some games from 90s акщь previous century.
+      | Like some games from 90s of previous century.
     p.issue-explanation
       | If we click on hamburger in Edge we`ll see that top and bottom dases 
       | can blinking when dissapearing. In IE11 and IE10 middle dashes got 
-      | some bolder while rotating. And in IE9 transitions doesn`t work at all. 
+      | some bolder while rotating and still may blinking. And in IE9 
+      | transitions doesn`t work at all. 
       | We need to write some Javascript or plug some ready solution to 
       | polyfill transitions, if we still working with IE9.
     p.issue-explanation
       And css animation doesn`t work in IE9 too.
+    p.issue-explanation 
+      | Let`s see on GSAP, which promises fast, cross-browser animations with
+      | more features than css transitions or css animations.
+    section.gsap-demo(aria-labelledby="#gsap-demo")
+      h3#gsap-demo(role="heading").text-center GSAP demo
+      p.issue-explanation
+        | Here we can try to solve above problems with hamburger component.
+      #subject

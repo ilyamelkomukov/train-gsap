@@ -4,4 +4,9 @@ TrainRoom.sayHello();
 
 $("document").ready(() => {
   TrainRoom.makeHamburgerClickable();
+
+  let subject = $("#subject");
+  subject.click(() => {
+    TrainRoom.doExperiment1(subject);
+  });
 });
