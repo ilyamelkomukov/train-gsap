@@ -1,3 +1,7 @@
+.gsap-experiments {
+  position: relative;
+}
+
 #gsap-experiments {
   font-size: 4em;
 }
@@ -13,4 +17,63 @@
   background-color: rgb(184, 18, 138);
   border: 2px solid rgb(233, 52, 119);
   transform: none;
+}
+
+.gsap-psy {
+  position: relative;
+  margin-top: 65em;
+}
+
+#gsap-psy {
+  font-size: 4em;
+}
+
+.office {
+  position: relative;
+  background-color: #000;
+  height: 130vh;
+}
+
+.office__key {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateY(-100%),
+    translateX(-50%);
+}
+
+.key, .clock {
+  height: 80vh;
+  width: auto;
+  transform-style: preserve-3d;
+}
+
+.key {
+  transform-origin: top center;
+  cursor: pointer;
+}
+
+.office__clock {
+  position: absolute;
+}
+
+.clock {
+  top: 20%;
+  perspective-origin: bottom right;
+  animation: flowPast 1.5s ease-in;
+}
+
+
+@keyframes flowPast {
+  from {
+    transform: perspective(214px) translateZ(-90px);
+  }
+
+  80% {
+    transform: perspective(214px) translateZ(110px);
+  }
+
+  to {
+    transform: perspective(214px) translateZ(214px);
+  }
 }

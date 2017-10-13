@@ -24,10 +24,12 @@ var isDev = process.env.NODE_ENV == 'development',
   inputLayouts = `${frontEnd}/components/`,
   inputStyles = `${frontEnd}/styles/`,
   inputScripts = `${frontEnd}/scripts/`,
+  inputImgs = `${frontEnd}/imgs/`,
 
   build = `${baseDir}/build/`,
   outputStyles = `${build}/style/`,
-  outputScripts = `${build}/script/`;
+  outputScripts = `${build}/script/`,
+  outputImgs = `${build}/imgs/`;
 
   /*** End project paths ***/
 
@@ -51,6 +53,14 @@ gulp.task("styles", () => {
     .pipe(gulp.dest(outputStyles));
 });
 /*** End styles task ***/
+
+
+gulp.task("pics", () => {
+  return gulp.src(`${inputImgs}/*.*`)
+    .pipe(gulp.dest(`${outputImgs}`));
+});
+
+/*** Start js task ***/
 
 gulp.task('js', () => {
   return gulp.src(`${inputScripts}/main.js`)
@@ -81,6 +91,8 @@ gulp.task('js', () => {
     .pipe(gulp.dest(outputScripts));
 });
 
+/*** Start js task ***/
+
 
 /*** Start serve task ***/
 
@@ -100,6 +112,7 @@ gulp.task("serve", (done) => {
 gulp.task('watch', (done) => {
   gulp.watch(`${inputLayouts}/**/*.pug`, gulp.series('layouts'));
   gulp.watch( [`${inputStyles}/**/*.less`, `${inputLayouts}/**/*.less`], gulp.series('styles') );
+  gulp.watch( `${inputImgs}/*.*`, gulp.series('pics') );
   gulp.watch( [`${inputScripts}/*.js`, `${inputLayouts}/**/*.js`], gulp.series('js') );
 
   done();
@@ -110,7 +123,7 @@ gulp.task('watch', (done) => {
 
 gulp.task('default', gulp.series(
   gulp.parallel(
-    'layouts', 'styles', 'js'
+    'layouts', 'pics', 'styles', 'js'
   ),
   'serve',
   'watch'
