@@ -2,4 +2,21 @@ section.gsap-demo(aria-labelledby="#gsap-demo")
   h2#gsap-demo(role="heading").text-center GSAP demo
   p.issue-explanation
     | Here we can try to solve above problems with hamburger component.
+    include ../Hamburger/Hamburger.pug
+  p.issue-explanation
+    | Unfortunately, gsap can`t solve problem with ugly, laggy transition 
+    | rendering in some browsers. Furthermore, in webkit-based browser there is 
+    | some little holdup or lag. It isn`t appear every time, but in most cases. 
+    | If you have not had enough, gsap animations for hamburger component needs 
+    | separate way for reverse the animations and show the hamburger component 
+    | becomes a humburger again after becoming a cross.
+  p.issue-explanation
+    strong Conclusion: 
+    | if we need some simple animations &mdash; use css transitions 
+    | and don`t forget about prefixes. If we need some beautiful and complex 
+    | process &mdash; yes we need gsap.
+  p.issue-explanation
+    | P.S. And pay attention to that the tweening the visibility css property 
+    | doesn`t work. You need to use the onComplete handler and set the 
+    | visibility there.
   include ../CustomExperiment/CustomExperiment.pug
