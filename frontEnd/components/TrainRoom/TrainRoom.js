@@ -18,10 +18,14 @@ let TrainRoom = {
   },
 
   doExperiment1(subject) {
-    TweenLite.from(subject, 1.2, {
-      right: "0",
-      backgroundColor: "rgb(231, 225, 104)",
-      ease: Bounce.easeOut
+    subject.click(() => {
+
+      TweenLite.from(subject, 5, {
+        right: "0",
+        backgroundColor: "rgb(231, 225, 104)",
+        transform: "rotateX(180deg)",
+        ease: CustomEase.create("custom", "M0,0 C0.14,0 0.076,0.376 0.1,0.6 0.11,0.693 0.102,1 0.172,0.99 0.296,0.972 0.166,0.08 0.3,0.046 0.422,0.078 0.352,1.022 0.422,1 0.503,0.974 0.43,0.088 0.534,0.088 0.606,0.088 0.6,0.942 0.652,1 0.72,1.076 0.684,0.278 0.752,0.32 0.818,0.38 0.756,0.952 0.814,0.99 0.876,1.03 0.816,0.612 0.878,0.676 0.906,0.744 0.888,1.016 0.942,1 0.958,0.81 1,1 1,1")
+      });
     });
   }
 };
